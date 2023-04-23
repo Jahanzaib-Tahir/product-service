@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: products
+      password: rootpass
+      username: rootuser
+      authentication-database: admin
+  application:
+    name: product-service
+server:
+  port: 8082
+mongock:
+  change-logs-scan-package: com.micorservice.store.productservice.config
