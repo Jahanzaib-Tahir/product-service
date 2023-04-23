@@ -20,6 +20,9 @@ dist/
 
 # JetBrains IDE
 .idea/*
+.mvn/*
+.idea/codeStyles/*
+
 
 # Unit test reports
 TEST*.xml
