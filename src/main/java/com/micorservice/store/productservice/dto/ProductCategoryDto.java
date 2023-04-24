@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class ProductCategoryDto {
     private Long id;
     private String name;
+    private Long parent;
 
     public ProductCategoryDto() {
     }
@@ -24,5 +25,22 @@ public class ProductCategoryDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getParent() {
+        return parent;
+    }
+
+    public void setParent(Long parent) {
+        this.parent = parent;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductCategoryDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parent=" + parent +
+                '}';
     }
 }

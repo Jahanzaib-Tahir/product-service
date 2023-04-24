@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 public class ProductCategory {
     private Long id;
     private String name;
-    @DocumentReference(lazy = true)
+    @DocumentReference
     private ProductCategory parent;
 
     public ProductCategory() {
@@ -32,12 +32,35 @@ public class ProductCategory {
         this.id = id;
     }
 
+    public ProductCategory withId(Long id){
+        this.id = id;
+        return this;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ProductCategory withName(String name){
+        this.name = name;
+        return this;
+    }
+
+    public ProductCategory getParent() {
+        return parent;
+    }
+
+    public void setParent(ProductCategory parent) {
+        this.parent = parent;
+    }
+
+    public ProductCategory withParent(ProductCategory parent){
+        this.parent = parent;
+        return this;
     }
 
     @Override

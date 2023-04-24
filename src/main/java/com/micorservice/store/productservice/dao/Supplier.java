@@ -1,6 +1,7 @@
 package com.micorservice.store.productservice.dao;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 @Document(collection = "supplier")
 public class Supplier {
@@ -8,6 +9,7 @@ public class Supplier {
     private String name;
     private String email;
     private String phone;
+    @DocumentReference(lazy = true)
     private Address address;
 
     public Supplier() {

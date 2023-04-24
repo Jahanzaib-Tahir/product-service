@@ -1,11 +1,13 @@
 package com.micorservice.store.productservice.dao;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 @Document(collection = "address")
 public class Address {
     private Long id;
     private String fullAddress;
+    @DocumentReference(lazy = true)
     private City city;
 
     public Address() {

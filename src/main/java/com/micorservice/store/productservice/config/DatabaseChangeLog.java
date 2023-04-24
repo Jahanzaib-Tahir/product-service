@@ -2,12 +2,8 @@ package com.micorservice.store.productservice.config;
 
 import com.github.cloudyrock.mongock.ChangeLog;
 import com.github.cloudyrock.mongock.ChangeSet;
-import com.micorservice.store.productservice.dao.City;
-import com.micorservice.store.productservice.dao.Country;
-import com.micorservice.store.productservice.dao.ProductCategory;
-import com.micorservice.store.productservice.repository.CityRepository;
-import com.micorservice.store.productservice.repository.CountryRepository;
-import com.micorservice.store.productservice.repository.ProductCategoryRepository;
+import com.micorservice.store.productservice.dao.*;
+import com.micorservice.store.productservice.repository.*;
 
 import java.util.*;
 
@@ -43,6 +39,18 @@ public class DatabaseChangeLog {
                 new ProductCategory(4L,"Laptops", productCategory.get()),
                 new ProductCategory(5L,"Headphones", productCategory.get()));
         productCategoryRepository.saveAll(productCategories);
+    }
+
+    @ChangeSet(order = "4", id = "00004",author = "Jahanzaib")
+    public void seedDataSupplier(AddressRepository addressRepository, CityRepository cityRepository){
+        Optional<City> city = cityRepository.findById(1L);
+        addressRepository.save(new Address(1L,"4377 Cathy Harbour", city.get()));
+    }
+
+    @ChangeSet(order = "5", id = "00005",author = "Jahanzaib")
+    public void seedDataSupplier(SupplierRepository supplierRepository,AddressRepository addressRepository){
+        Optional<Address> address = addressRepository.findById(1L);
+        supplierRepository.save(new Supplier(7L,"ABC Supplier","abc@suuplier.com", "+123456789", address.get()));
     }
 
 }
