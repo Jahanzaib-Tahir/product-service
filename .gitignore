@@ -1,7 +1,6 @@
 dist/
 # maven
 .mvn/*
-
 # Compiled Java class files
 *.class
 
@@ -16,12 +15,9 @@ dist/
 
 # Maven
 target/
-dist/
 
 # JetBrains IDE
 .idea/*
-.mvn/*
-.idea/codeStyles/*
 
 
 # Unit test reports
@@ -48,3 +44,5 @@ Thumbs.db
 
 # Other
 HELP.md
+mvnw.cmd
+mvnw
