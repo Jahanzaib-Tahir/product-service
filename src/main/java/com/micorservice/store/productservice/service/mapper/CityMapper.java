@@ -15,4 +15,12 @@ public interface CityMapper {
             @Mapping(source = "country", target = "countryDto")
     })
     CityDto toDto(City city);
+
+
+    @Mappings({
+            @Mapping(source = "id", target = "id"),
+            @Mapping(source = "name", target = "name"),
+            @Mapping(source = "countryDto", target = "country")
+    })
+    City toEntity(CityDto cityDto);
 }
