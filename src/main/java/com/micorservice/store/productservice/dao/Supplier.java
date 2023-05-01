@@ -1,10 +1,13 @@
 package com.micorservice.store.productservice.dao;
 
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 @Document(collection = "supplier")
 public class Supplier {
+    @Transient
+    public static final String SEQUENCE_NAME = "supplier_sequence";
     private Long id;
     private String name;
     private String email;

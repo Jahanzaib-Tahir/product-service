@@ -1,10 +1,14 @@
 package com.micorservice.store.productservice.dao;
 
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 @Document(collection = "product_category")
 public class ProductCategory {
+
+    @Transient
+    public static final String SEQUENCE_NAME = "product_category_sequence";
     private Long id;
     private String name;
     @DocumentReference

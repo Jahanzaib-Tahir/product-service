@@ -1,9 +1,12 @@
 package com.micorservice.store.productservice.dao;
 
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "country")
 public class Country {
+    @Transient
+    public static final String SEQUENCE_NAME = "city_sequence";
     private Long id;
     private String name;
     private String shortName;
